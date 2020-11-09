@@ -1,5 +1,6 @@
-package com.cristinashuw.reviewapp.domain
+package com.cristinashuw.reviewapp.domain.repository
 
+import com.cristinashuw.reviewapp.domain.result.ListReview
 import io.reactivex.Observable
 import io.reactivex.Single
 
@@ -11,7 +12,7 @@ interface ReviewRepository {
     fun getReviewId(): Long
 
     interface DataSource :
-        ReviewRepository{
+            ReviewRepository {
 
     }
 }
