@@ -1,7 +1,7 @@
-package com.cristinashuw.reviewapp.usecase
+package com.cristinashuw.reviewapp.domain.usecase
 
-import com.cristinashuw.reviewapp.domain.ListReview
-import com.cristinashuw.reviewapp.domain.ReviewRepository
+import com.cristinashuw.reviewapp.domain.repository.ReviewRepository
+import com.cristinashuw.reviewapp.domain.result.ListReview
 import io.reactivex.Observable
 import javax.inject.Inject
 
