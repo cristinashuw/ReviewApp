@@ -1,7 +1,7 @@
 package com.cristinashuw.reviewapp.data.remote
 
 import com.cristinashuw.reviewapp.domain.repository.ReviewRepository.DataSource
-import com.cristinashuw.reviewapp.domain.result.ListReview
+import com.cristinashuw.reviewapp.domain.result.Review
 import io.reactivex.Observable
 import io.reactivex.Single
 import java.lang.UnsupportedOperationException
@@ -12,21 +12,25 @@ class RemoteReviewSource @Inject internal constructor(
     private val reviewResponseMapper: ReviewResponseMapper
 ) : DataSource {
 
-    override fun getAllReview(productId: Long): Single<ListReview> {
-        return reviewApi.getAllReview(productId)
-                .onErrorResumeNext { Single.error(it) }
-                .map { reviewResponseMapper.toData(it) }
-    }
-
-    override fun getDetailReview(productId: Long): Observable<String> {
+    override fun getAllReview(productId: Long): Single<List<Review>> {
         TODO("Not yet implemented")
     }
 
-    override fun deleteReview(): Observable<Boolean> {
+    override fun getDetailReview(productId: Long): Observable<Review> {
+        TODO("Not yet implemented")
+    }
+
+    override fun deleteReview(review: Review): Observable<Boolean> {
         throw UnsupportedOperationException()
     }
 
-    override fun getReviewId(): Long {
+    override fun saveReview(review: Review): Observable<Boolean> {
         TODO("Not yet implemented")
     }
+
+    override fun updateReview(review: Review): Observable<Boolean> {
+        TODO("Not yet implemented")
+    }
+
+
 }
